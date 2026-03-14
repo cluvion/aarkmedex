@@ -1,0 +1,1257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Digital Marketing Proposal — A.A.R.K Medex</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet"/>
+<style>
+  :root {
+    --navy: #060d1f;
+    --deep: #0a1528;
+    --card: #0e1c35;
+    --card2: #112040;
+    --gold: #c9a84c;
+    --gold2: #e8c46a;
+    --teal: #1fd0c8;
+    --teal2: #00e5db;
+    --white: #f5f0e8;
+    --muted: #8a9ab8;
+    --border: rgba(201,168,76,0.2);
+    --border2: rgba(31,208,200,0.15);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--navy);
+    color: var(--white);
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 300;
+    line-height: 1.7;
+    overflow-x: hidden;
+  }
+
+  /* ── NOISE TEXTURE OVERLAY ── */
+  body::before {
+    content: '';
+    position: fixed; inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 0;
+    opacity: 0.4;
+  }
+
+  /* ── SCROLLBAR ── */
+  ::-webkit-scrollbar { width: 5px; }
+  ::-webkit-scrollbar-track { background: var(--deep); }
+  ::-webkit-scrollbar-thumb { background: var(--gold); border-radius: 4px; }
+
+  /* ── HERO ── */
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 80px 24px 60px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero-bg {
+    position: absolute; inset: 0;
+    background:
+      radial-gradient(ellipse 80% 60% at 50% 30%, rgba(31,208,200,0.07) 0%, transparent 70%),
+      radial-gradient(ellipse 60% 40% at 80% 80%, rgba(201,168,76,0.06) 0%, transparent 60%),
+      radial-gradient(ellipse 50% 70% at 10% 50%, rgba(10,21,40,0.9) 0%, transparent 70%);
+    z-index: 0;
+  }
+
+  /* animated grid lines */
+  .hero-grid {
+    position: absolute; inset: 0;
+    background-image:
+      linear-gradient(rgba(31,208,200,0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(31,208,200,0.04) 1px, transparent 1px);
+    background-size: 60px 60px;
+    animation: gridShift 20s linear infinite;
+    z-index: 0;
+  }
+
+  @keyframes gridShift {
+    0% { background-position: 0 0; }
+    100% { background-position: 60px 60px; }
+  }
+
+  .hero-content { position: relative; z-index: 1; max-width: 860px; }
+
+  .badge {
+    display: inline-block;
+    font-family: 'Space Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--teal);
+    border: 1px solid var(--border2);
+    padding: 8px 20px;
+    border-radius: 2px;
+    margin-bottom: 32px;
+    animation: fadeUp 0.8s ease both;
+  }
+
+  .hero h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(3rem, 8vw, 6.5rem);
+    font-weight: 300;
+    line-height: 1.05;
+    letter-spacing: -1px;
+    color: var(--white);
+    animation: fadeUp 0.9s ease 0.1s both;
+  }
+
+  .hero h1 em {
+    font-style: italic;
+    color: var(--gold);
+  }
+
+  .hero-sub {
+    margin-top: 24px;
+    font-size: 1.05rem;
+    color: var(--muted);
+    max-width: 560px;
+    margin-left: auto;
+    margin-right: auto;
+    animation: fadeUp 1s ease 0.2s both;
+  }
+
+  .hero-divider {
+    width: 80px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    margin: 36px auto;
+    animation: fadeUp 1s ease 0.3s both;
+  }
+
+  .hero-meta {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+    animation: fadeUp 1s ease 0.4s both;
+  }
+
+  .hero-meta-item {
+    text-align: center;
+  }
+
+  .hero-meta-item .val {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2rem;
+    font-weight: 600;
+    color: var(--gold);
+  }
+
+  .hero-meta-item .lbl {
+    font-size: 0.72rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  /* ── SECTION WRAPPER ── */
+  section { padding: 90px 24px; position: relative; z-index: 1; }
+  .container { max-width: 1100px; margin: 0 auto; }
+
+  .section-label {
+    font-family: 'Space Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--teal);
+    margin-bottom: 14px;
+    display: block;
+  }
+
+  .section-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2rem, 5vw, 3.4rem);
+    font-weight: 300;
+    line-height: 1.15;
+    color: var(--white);
+    margin-bottom: 20px;
+  }
+
+  .section-title em { font-style: italic; color: var(--gold); }
+
+  .section-body {
+    font-size: 0.98rem;
+    color: var(--muted);
+    max-width: 680px;
+    line-height: 1.8;
+  }
+
+  hr.sep {
+    border: none;
+    border-top: 1px solid var(--border);
+    margin: 0;
+  }
+
+  /* ── ABOUT ── */
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: start;
+    margin-top: 56px;
+  }
+
+  .about-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 36px;
+    position: relative;
+    overflow: hidden;
+    transition: border-color 0.3s, transform 0.3s;
+  }
+
+  .about-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 2px;
+    background: linear-gradient(90deg, var(--gold), transparent);
+  }
+
+  .about-card:hover {
+    border-color: rgba(201,168,76,0.4);
+    transform: translateY(-4px);
+  }
+
+  .about-card .icon {
+    font-size: 2rem;
+    margin-bottom: 16px;
+  }
+
+  .about-card h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.4rem;
+    font-weight: 400;
+    color: var(--white);
+    margin-bottom: 10px;
+  }
+
+  .about-card p {
+    font-size: 0.9rem;
+    color: var(--muted);
+    line-height: 1.75;
+  }
+
+  /* ── CATEGORIES STRIP ── */
+  .cat-strip {
+    background: var(--deep);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    padding: 40px 24px;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .cat-track {
+    display: flex;
+    gap: 0;
+    animation: ticker 28s linear infinite;
+    width: max-content;
+  }
+
+  .cat-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 0 32px;
+    font-family: 'Space Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--muted);
+    white-space: nowrap;
+    border-right: 1px solid var(--border);
+    transition: color 0.2s;
+  }
+
+  .cat-item span { color: var(--gold); font-size: 14px; }
+
+  @keyframes ticker {
+    from { transform: translateX(0); }
+    to   { transform: translateX(-50%); }
+  }
+
+  /* ── STRATEGY ── */
+  .strategy-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-top: 56px;
+  }
+
+  .strat-card {
+    background: var(--card);
+    border: 1px solid var(--border2);
+    border-radius: 4px;
+    padding: 32px 28px;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s;
+  }
+
+  .strat-card::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0;
+    width: 100%; height: 2px;
+    background: linear-gradient(90deg, var(--teal), transparent);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.4s;
+  }
+
+  .strat-card:hover::after { transform: scaleX(1); }
+  .strat-card:hover { border-color: rgba(31,208,200,0.3); transform: translateY(-4px); }
+
+  .strat-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 3.5rem;
+    font-weight: 300;
+    color: rgba(201,168,76,0.15);
+    line-height: 1;
+    margin-bottom: 12px;
+  }
+
+  .strat-card h3 {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--white);
+    margin-bottom: 10px;
+    letter-spacing: 0.5px;
+  }
+
+  .strat-card p {
+    font-size: 0.87rem;
+    color: var(--muted);
+    line-height: 1.75;
+  }
+
+  /* ── PLATFORMS ── */
+  .platform-row {
+    display: flex;
+    gap: 24px;
+    margin-top: 48px;
+    flex-wrap: wrap;
+  }
+
+  .platform-card {
+    flex: 1;
+    min-width: 220px;
+    background: var(--card2);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 32px;
+    text-align: center;
+    transition: all 0.3s;
+  }
+
+  .platform-card:hover { border-color: var(--gold); transform: translateY(-4px); }
+
+  .platform-card .p-icon { font-size: 2.5rem; margin-bottom: 14px; display: block; }
+
+  .platform-card h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.3rem;
+    color: var(--gold);
+    margin-bottom: 8px;
+  }
+
+  .platform-card p {
+    font-size: 0.85rem;
+    color: var(--muted);
+    line-height: 1.7;
+  }
+
+  /* ── PROCESS ── */
+  .process-timeline {
+    margin-top: 60px;
+    position: relative;
+  }
+
+  .process-timeline::before {
+    content: '';
+    position: absolute;
+    left: 28px;
+    top: 0; bottom: 0;
+    width: 1px;
+    background: linear-gradient(to bottom, var(--gold), transparent);
+  }
+
+  .process-step {
+    display: flex;
+    gap: 32px;
+    align-items: flex-start;
+    margin-bottom: 48px;
+    padding-left: 8px;
+    animation: fadeUp 0.6s ease both;
+  }
+
+  .step-dot {
+    width: 42px;
+    height: 42px;
+    min-width: 42px;
+    border-radius: 50%;
+    background: var(--card);
+    border: 1px solid var(--gold);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Space Mono', monospace;
+    font-size: 12px;
+    color: var(--gold);
+    position: relative;
+    z-index: 1;
+  }
+
+  .step-content h3 {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--white);
+    margin-bottom: 8px;
+  }
+
+  .step-content p { font-size: 0.88rem; color: var(--muted); line-height: 1.75; }
+
+  /* ── PACKAGES ── */
+  .packages-section {
+    background: var(--deep);
+    border-top: 1px solid var(--border);
+  }
+
+  .packages-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+    margin-top: 56px;
+  }
+
+  .pkg-card {
+    background: var(--card);
+    border-radius: 6px;
+    overflow: hidden;
+    position: relative;
+    transition: transform 0.3s;
+  }
+
+  .pkg-card:hover { transform: translateY(-6px); }
+
+  .pkg-card.featured {
+    border: 1px solid var(--gold);
+    box-shadow: 0 0 60px rgba(201,168,76,0.08), 0 0 0 1px rgba(201,168,76,0.15);
+  }
+
+  .pkg-card.standard {
+    border: 1px solid var(--border2);
+    box-shadow: 0 0 40px rgba(31,208,200,0.05);
+  }
+
+  .pkg-badge {
+    position: absolute;
+    top: 20px; right: 20px;
+    font-family: 'Space Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 5px 12px;
+    border-radius: 2px;
+  }
+
+  .featured .pkg-badge {
+    background: var(--gold);
+    color: var(--navy);
+  }
+
+  .standard .pkg-badge {
+    background: var(--teal);
+    color: var(--navy);
+  }
+
+  .pkg-header {
+    padding: 40px 40px 28px;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+  }
+
+  .pkg-header .pkg-name {
+    font-family: 'Space Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 12px;
+  }
+
+  .pkg-price {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 4rem;
+    font-weight: 300;
+    line-height: 1;
+    margin-bottom: 6px;
+  }
+
+  .featured .pkg-price { color: var(--gold); }
+  .standard .pkg-price { color: var(--teal); }
+
+  .pkg-price sup {
+    font-size: 1.6rem;
+    vertical-align: super;
+    font-weight: 400;
+  }
+
+  .pkg-price-label {
+    font-size: 0.8rem;
+    color: var(--muted);
+    letter-spacing: 1px;
+  }
+
+  .pkg-tagline {
+    margin-top: 14px;
+    font-size: 0.92rem;
+    color: var(--muted);
+    font-style: italic;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem;
+  }
+
+  .pkg-body { padding: 36px 40px 40px; }
+
+  .pkg-section-title {
+    font-family: 'Space Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 18px;
+    margin-top: 28px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+  }
+
+  .pkg-section-title:first-child { margin-top: 0; }
+
+  .pkg-features { list-style: none; }
+
+  .pkg-features li {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 9px 0;
+    font-size: 0.9rem;
+    color: var(--white);
+    border-bottom: 1px solid rgba(255,255,255,0.04);
+  }
+
+  .pkg-features li:last-child { border-bottom: none; }
+
+  .pkg-features li .check {
+    color: var(--gold);
+    font-size: 12px;
+    margin-top: 3px;
+    min-width: 14px;
+  }
+
+  .standard .pkg-features li .check { color: var(--teal); }
+
+  .pkg-features li .feat-text {
+    line-height: 1.5;
+    color: var(--muted);
+  }
+
+  .pkg-features li .feat-text strong {
+    color: var(--white);
+    font-weight: 500;
+    display: block;
+    font-size: 0.92rem;
+  }
+
+  .pkg-cta {
+    display: block;
+    width: 100%;
+    padding: 16px;
+    border-radius: 3px;
+    font-family: 'Space Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    text-align: center;
+    text-decoration: none;
+    margin-top: 32px;
+    cursor: pointer;
+    transition: all 0.3s;
+  }
+
+  .featured .pkg-cta {
+    background: var(--gold);
+    color: var(--navy);
+    border: 1px solid var(--gold);
+  }
+
+  .featured .pkg-cta:hover {
+    background: var(--gold2);
+  }
+
+  .standard .pkg-cta {
+    background: transparent;
+    color: var(--teal);
+    border: 1px solid var(--teal);
+  }
+
+  .standard .pkg-cta:hover {
+    background: rgba(31,208,200,0.1);
+  }
+
+  /* ── WHY US ── */
+  .why-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+    margin-top: 56px;
+  }
+
+  .why-card {
+    text-align: center;
+    padding: 40px 20px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    transition: all 0.3s;
+  }
+
+  .why-card:hover {
+    border-color: var(--gold);
+    transform: translateY(-4px);
+  }
+
+  .why-card .w-icon { font-size: 2.2rem; margin-bottom: 14px; display: block; }
+
+  .why-card .w-val {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.4rem;
+    font-weight: 300;
+    color: var(--gold);
+    line-height: 1;
+    margin-bottom: 6px;
+  }
+
+  .why-card .w-lbl {
+    font-size: 0.82rem;
+    color: var(--muted);
+    letter-spacing: 1px;
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    background: #040b18;
+    border-top: 1px solid var(--border);
+    padding: 56px 24px 40px;
+    text-align: center;
+  }
+
+  footer .f-logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.8rem;
+    font-weight: 300;
+    color: var(--white);
+    letter-spacing: 2px;
+    margin-bottom: 8px;
+  }
+
+  footer .f-logo em { color: var(--gold); font-style: italic; }
+
+  footer .f-tag {
+    font-size: 0.8rem;
+    color: var(--muted);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 32px;
+  }
+
+  footer .f-contacts {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+    margin-bottom: 32px;
+  }
+
+  footer .f-contacts a {
+    color: var(--muted);
+    text-decoration: none;
+    font-size: 0.88rem;
+    transition: color 0.2s;
+  }
+
+  footer .f-contacts a:hover { color: var(--gold); }
+
+  footer .f-copy {
+    font-size: 0.75rem;
+    color: rgba(138,154,184,0.5);
+    font-family: 'Space Mono', monospace;
+    letter-spacing: 1px;
+  }
+
+  /* ── COMPARISON TABLE ── */
+  .compare-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 48px;
+    font-size: 0.9rem;
+  }
+
+  .compare-table thead th {
+    padding: 18px 24px;
+    text-align: left;
+    font-family: 'Space Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--muted);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .compare-table thead th:nth-child(2) { color: var(--teal); }
+  .compare-table thead th:nth-child(3) { color: var(--gold); }
+
+  .compare-table tbody td {
+    padding: 16px 24px;
+    border-bottom: 1px solid rgba(255,255,255,0.04);
+    color: var(--muted);
+    vertical-align: middle;
+  }
+
+  .compare-table tbody td:first-child { color: var(--white); font-weight: 400; }
+
+  .compare-table tbody tr:hover td { background: rgba(255,255,255,0.02); }
+
+  .tick { color: var(--gold); font-size: 16px; }
+  .tick-t { color: var(--teal); font-size: 16px; }
+  .cross { color: rgba(138,154,184,0.3); }
+
+  /* ── AD TYPES ── */
+  .ad-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-top: 48px;
+  }
+
+  .ad-card {
+    background: var(--card2);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 28px 24px;
+    transition: all 0.3s;
+  }
+
+  .ad-card:hover {
+    border-color: rgba(201,168,76,0.35);
+    transform: translateY(-3px);
+  }
+
+  .ad-card .ad-icon { font-size: 1.8rem; margin-bottom: 12px; display: block; }
+
+  .ad-card h4 {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--white);
+    margin-bottom: 8px;
+  }
+
+  .ad-card p { font-size: 0.84rem; color: var(--muted); line-height: 1.7; }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 768px) {
+    .about-grid,
+    .strategy-grid,
+    .packages-grid,
+    .why-grid,
+    .ad-grid { grid-template-columns: 1fr; }
+    .platform-row { flex-direction: column; }
+    .strategy-grid { grid-template-columns: 1fr 1fr; }
+    .why-grid { grid-template-columns: 1fr 1fr; }
+    .pkg-header, .pkg-body { padding: 28px 24px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════════ HERO ══ -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-grid"></div>
+  <div class="hero-content">
+    <div class="badge">Digital Marketing Proposal — 2025</div>
+    <h1>Grow <em>A.A.R.K Medex</em><br>Across Every Screen</h1>
+    <p class="hero-sub">A tailored Social Media Marketing & Meta Ads strategy designed to build trust, drive orders, and establish A.A.R.K Medex as India's premier online pharmacy brand.</p>
+    <div class="hero-divider"></div>
+    <div class="hero-meta">
+      <div class="hero-meta-item">
+        <div class="val">2</div>
+        <div class="lbl">Packages</div>
+      </div>
+      <div class="hero-meta-item">
+        <div class="val">30K+</div>
+        <div class="lbl">Starting At</div>
+      </div>
+      <div class="hero-meta-item">
+        <div class="val">30</div>
+        <div class="lbl">Days / Month</div>
+      </div>
+      <div class="hero-meta-item">
+        <div class="val">3+</div>
+        <div class="lbl">Platforms</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="sep"/>
+
+<!-- ═══════════════════════════════════════════ ABOUT BRAND ══ -->
+<section>
+  <div class="container">
+    <span class="section-label">About the Brand</span>
+    <h2 class="section-title">Who Is <em>A.A.R.K Medex?</em></h2>
+    <p class="section-body">A.A.R.K Medex is a trusted global pharmaceutical supply company headquartered in India, delivering high-quality generic, branded, and specialty medicines to customers and distributors worldwide. The company combines strict regulatory compliance with an AI-powered healthcare experience — including a built-in virtual medical assistant — to make healthcare simpler and more accessible.</p>
+
+    <div class="about-grid">
+      <div class="about-card">
+        <div class="icon">🌐</div>
+        <h3>Global Online Pharmacy</h3>
+        <p>Operating at aarkmedex.com, A.A.R.K Medex ships pharmaceuticals internationally — from antifungals to cardiac medicines, antiviral ranges, HIV treatments, oncology products, and beyond. Over 500+ SKUs available on a single platform with real-time ordering.</p>
+      </div>
+      <div class="about-card">
+        <div class="icon">🤖</div>
+        <h3>AI-Powered Health Support</h3>
+        <p>Their proprietary MediHelp AI virtual assistant provides 24/7 health guidance, helping users understand symptoms, explore conditions, and make informed decisions before consulting a professional — a true tech-first healthcare approach.</p>
+      </div>
+      <div class="about-card">
+        <div class="icon">💊</div>
+        <h3>Diverse Product Portfolio</h3>
+        <p>Products span 20+ therapeutic categories including Sexual Wellness, Skin Care, Anti-Cancer, HIV Medicines, Sleeping Pills, Thyroid Treatment, Anti-Malarial, Antiviral, Contraceptives, Women's Health, Veterinary Range, and many more.</p>
+      </div>
+      <div class="about-card">
+        <div class="icon">🏅</div>
+        <h3>Quality & Trust First</h3>
+        <p>All products are responsibly sourced, verified, and documented with complete regulatory compliance. Trusted by healthcare professionals and patients globally — with positive reviews from doctors, distributors, and direct consumers alike.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════ TICKER ══ -->
+<div class="cat-strip">
+  <div class="cat-track">
+    <div class="cat-item"><span>●</span> Sexual Wellness</div>
+    <div class="cat-item"><span>●</span> Skin Care Range</div>
+    <div class="cat-item"><span>●</span> HIV Medicines</div>
+    <div class="cat-item"><span>●</span> Anticancer Range</div>
+    <div class="cat-item"><span>●</span> Sleeping Pills</div>
+    <div class="cat-item"><span>●</span> Antiviral Range</div>
+    <div class="cat-item"><span>●</span> Women's Health</div>
+    <div class="cat-item"><span>●</span> Cardiac Range</div>
+    <div class="cat-item"><span>●</span> Antifungal</div>
+    <div class="cat-item"><span>●</span> Thyroid Treatment</div>
+    <div class="cat-item"><span>●</span> Anti-Malarial</div>
+    <div class="cat-item"><span>●</span> Veterinary Range</div>
+    <div class="cat-item"><span>●</span> General Range</div>
+    <div class="cat-item"><span>●</span> Antibiotics</div>
+    <!-- duplicate for seamless loop -->
+    <div class="cat-item"><span>●</span> Sexual Wellness</div>
+    <div class="cat-item"><span>●</span> Skin Care Range</div>
+    <div class="cat-item"><span>●</span> HIV Medicines</div>
+    <div class="cat-item"><span>●</span> Anticancer Range</div>
+    <div class="cat-item"><span>●</span> Sleeping Pills</div>
+    <div class="cat-item"><span>●</span> Antiviral Range</div>
+    <div class="cat-item"><span>●</span> Women's Health</div>
+    <div class="cat-item"><span>●</span> Cardiac Range</div>
+    <div class="cat-item"><span>●</span> Antifungal</div>
+    <div class="cat-item"><span>●</span> Thyroid Treatment</div>
+    <div class="cat-item"><span>●</span> Anti-Malarial</div>
+    <div class="cat-item"><span>●</span> Veterinary Range</div>
+    <div class="cat-item"><span>●</span> General Range</div>
+    <div class="cat-item"><span>●</span> Antibiotics</div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════ WHY DIGITAL ══ -->
+<section>
+  <div class="container">
+    <span class="section-label">The Opportunity</span>
+    <h2 class="section-title">Why <em>Digital Marketing</em><br>for A.A.R.K Medex?</h2>
+    <p class="section-body">The Indian online pharmacy market is projected to reach ₹1 lakh crore by 2030. Customers are actively searching for trusted medicine sources on Instagram, Facebook, and Google. Without a strong social media presence, A.A.R.K Medex is leaving massive revenue on the table.</p>
+
+    <div class="strategy-grid">
+      <div class="strat-card">
+        <div class="strat-num">01</div>
+        <h3>Brand Trust & Authority</h3>
+        <p>People trust pharmacies they see frequently. Consistent content on Meta platforms builds brand familiarity, credibility, and customer confidence in every medicine purchase.</p>
+      </div>
+      <div class="strat-card">
+        <div class="strat-num">02</div>
+        <h3>Direct Order Generation</h3>
+        <p>Meta Ads can target people actively searching for specific medicines, health conditions, or wellness products — driving them directly to aarkmedex.com product pages for immediate purchase.</p>
+      </div>
+      <div class="strat-card">
+        <div class="strat-num">03</div>
+        <h3>Educate & Convert</h3>
+        <p>Health education content (what medicines treat what, dosage info, wellness tips) positions A.A.R.K Medex as a knowledgeable authority, increasing organic reach and trust before the sale.</p>
+      </div>
+      <div class="strat-card">
+        <div class="strat-num">04</div>
+        <h3>Retarget Website Visitors</h3>
+        <p>Meta Pixel on the website allows us to retarget anyone who browsed products but didn't order — recovering lost sales with personalized ads showing exactly what they viewed.</p>
+      </div>
+      <div class="strat-card">
+        <div class="strat-num">05</div>
+        <h3>International Reach</h3>
+        <p>Since A.A.R.K Medex ships globally, Meta Ads can target buyers in the UAE, UK, USA, Africa, and Southeast Asia — expanding beyond the Indian domestic market at scale.</p>
+      </div>
+      <div class="strat-card">
+        <div class="strat-num">06</div>
+        <h3>Competitor Edge</h3>
+        <p>Most local pharma brands have weak social presence. Strong, consistent creative content gives A.A.R.K Medex an immediate competitive advantage in the digital health space.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════ PLATFORMS ══ -->
+<section style="padding-top: 0;">
+  <div class="container">
+    <span class="section-label">Platforms We'll Work On</span>
+    <h2 class="section-title">Where We'll <em>Build Your Brand</em></h2>
+
+    <div class="platform-row">
+      <div class="platform-card">
+        <span class="p-icon">📘</span>
+        <h3>Facebook</h3>
+        <p>Page management, targeted ads, health education posts, offer promotions, and retargeting campaigns to drive direct traffic and sales.</p>
+      </div>
+      <div class="platform-card">
+        <span class="p-icon">📸</span>
+        <h3>Instagram</h3>
+        <p>Reels, carousels, stories, and video content to build a loyal follower base and showcase product categories with visually rich content.</p>
+      </div>
+      <div class="platform-card">
+        <span class="p-icon">📊</span>
+        <h3>Meta Ads Manager</h3>
+        <p>Structured ad campaigns — awareness, traffic, conversion, and retargeting — with A/B tested creatives optimized for maximum ROAS.</p>
+      </div>
+      <div class="platform-card">
+        <span class="p-icon">💬</span>
+        <h3>WhatsApp Business</h3>
+        <p>Click-to-WhatsApp ads for direct enquiry generation, with automated responses guiding customers to the right product pages.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════ AD TYPES ══ -->
+<section style="padding-top: 0;">
+  <div class="container">
+    <span class="section-label">Content & Ad Formats</span>
+    <h2 class="section-title">The <em>Creative Mix</em> We'll Use</h2>
+    <p class="section-body">Every post, reel, and ad is designed with a purpose — educate, engage, or convert. Here's the full creative arsenal we deploy for A.A.R.K Medex.</p>
+
+    <div class="ad-grid">
+      <div class="ad-card">
+        <span class="ad-icon">🎬</span>
+        <h4>AI / Faceless Videos</h4>
+        <p>High-quality AI-generated or faceless videos showcasing medicines, their benefits, and brand messaging — without needing a spokesperson.</p>
+      </div>
+      <div class="ad-card">
+        <span class="ad-icon">👤</span>
+        <h4>UGC-Style Videos</h4>
+        <p>User-generated content style videos that feel authentic and relatable — driving higher engagement and trust compared to polished ads.</p>
+      </div>
+      <div class="ad-card">
+        <span class="ad-icon">🖼️</span>
+        <h4>Static Posters</h4>
+        <p>Professional designed graphics for product launches, offers, health awareness days, and category highlights — optimized for all placements.</p>
+      </div>
+      <div class="ad-card">
+        <span class="ad-icon">🔄</span>
+        <h4>Carousel Ads</h4>
+        <p>Multi-product showcase ads that walk customers through the product range with compelling copy and a clear call to action on every slide.</p>
+      </div>
+      <div class="ad-card">
+        <span class="ad-icon">📖</span>
+        <h4>Story Ads</h4>
+        <p>Full-screen vertical creatives for Instagram and Facebook Stories — perfect for flash offers, product spotlights, and driving direct link clicks.</p>
+      </div>
+      <div class="ad-card">
+        <span class="ad-icon">📝</span>
+        <h4>Health Education Posts</h4>
+        <p>Informative content about common health conditions, treatment options, and wellness tips — building authority and organic reach simultaneously.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════ PROCESS ══ -->
+<section>
+  <div class="container">
+    <span class="section-label">How We Work</span>
+    <h2 class="section-title">Our <em>Month-by-Month</em> Process</h2>
+    <p class="section-body">Here's exactly how we execute your digital marketing each month — from strategy to reporting.</p>
+
+    <div class="process-timeline">
+      <div class="process-step">
+        <div class="step-dot">W1</div>
+        <div class="step-content">
+          <h3>Week 1 — Strategy & Content Calendar</h3>
+          <p>We build a detailed 30-day content calendar with post themes, ad angles, caption copy, and visual briefs. Every piece is aligned with your product categories, seasonal health moments, and campaign goals.</p>
+        </div>
+      </div>
+      <div class="process-step">
+        <div class="step-dot">W2</div>
+        <div class="step-content">
+          <h3>Week 2 — Creative Production</h3>
+          <p>Our design and video team produces all posters, AI videos, UGC-style reels, and ad creatives. You receive everything for review and approval before any live publishing or ad spend.</p>
+        </div>
+      </div>
+      <div class="process-step">
+        <div class="step-dot">W3</div>
+        <div class="step-content">
+          <h3>Week 3 — Publishing & Ad Launch</h3>
+          <p>All organic posts go live on schedule. Meta ad campaigns are set up with precise targeting — age, location, interest, behavior, and custom audiences from your website visitors and customer list.</p>
+        </div>
+      </div>
+      <div class="process-step">
+        <div class="step-dot">W4</div>
+        <div class="step-content">
+          <h3>Week 4 — Optimization & Reporting</h3>
+          <p>We monitor campaign performance daily, pause underperforming ads, scale winners, and provide a full monthly report with reach, engagement, clicks, leads, and ROAS breakdown.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════ WHY US ══ -->
+<section style="padding-top: 0;">
+  <div class="container">
+    <span class="section-label">Why Choose Us</span>
+    <h2 class="section-title">Our <em>Commitment</em> to Your Growth</h2>
+
+    <div class="why-grid">
+      <div class="why-card">
+        <span class="w-icon">🎯</span>
+        <div class="w-val">100%</div>
+        <div class="w-lbl">Niche-focused creative</div>
+      </div>
+      <div class="why-card">
+        <span class="w-icon">📅</span>
+        <div class="w-val">30</div>
+        <div class="w-lbl">Days consistent posting</div>
+      </div>
+      <div class="why-card">
+        <span class="w-icon">📊</span>
+        <div class="w-val">Weekly</div>
+        <div class="w-lbl">Performance check-ins</div>
+      </div>
+      <div class="why-card">
+        <span class="w-icon">💡</span>
+        <div class="w-val">0</div>
+        <div class="w-lbl">Wasted ad budget</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════ PACKAGES ══ -->
+<section class="packages-section">
+  <div class="container">
+    <span class="section-label">Pricing Packages</span>
+    <h2 class="section-title">Choose Your <em>Growth Plan</em></h2>
+    <p class="section-body">Two carefully designed packages for A.A.R.K Medex — start with the Starter plan and scale up to the Growth plan when ready for full-force digital dominance.</p>
+
+    <div class="packages-grid">
+
+      <!-- ── STARTER 30K ── -->
+      <div class="pkg-card standard">
+        <div class="pkg-badge">Starter</div>
+        <div class="pkg-header">
+          <div class="pkg-name">SMM + Meta Ads — Package 01</div>
+          <div class="pkg-price"><sup>₹</sup>30,000</div>
+          <div class="pkg-price-label">per month · all inclusive</div>
+          <div class="pkg-tagline">Build your foundation & start generating orders</div>
+        </div>
+        <div class="pkg-body">
+
+          <div class="pkg-section-title">📹 Video Content</div>
+          <ul class="pkg-features">
+            <li><span class="check">◆</span><span class="feat-text"><strong>4 Videos/Month</strong>AI-generated, Faceless, or UGC-style videos — product showcases, health tips, brand stories, and testimonial-style content. Fully edited with captions, branding, and music.</span></li>
+          </ul>
+
+          <div class="pkg-section-title">🖼️ Graphic Design</div>
+          <ul class="pkg-features">
+            <li><span class="check">◆</span><span class="feat-text"><strong>8 Static Posters/Month</strong>Professional branded graphics — product highlights, offers, health awareness, and category spotlights.</span></li>
+            <li><span class="check">◆</span><span class="feat-text"><strong>4 Story Graphics</strong>Vertical format stories for Instagram & Facebook with swipe-up CTAs and offer promotions.</span></li>
+          </ul>
+
+          <div class="pkg-section-title">📣 Social Media Management</div>
+          <ul class="pkg-features">
+            <li><span class="check">◆</span><span class="feat-text"><strong>Instagram + Facebook Pages</strong>Full management — posting schedule, captions, hashtag research, and engagement monitoring.</span></li>
+            <li><span class="check">◆</span><span class="feat-text"><strong>16 Posts/Month</strong>Consistent presence across both platforms with a balanced mix of education, product, and offer content.</span></li>
+            <li><span class="check">◆</span><span class="feat-text"><strong>Content Calendar</strong>Monthly plan shared in advance for your review and approval.</span></li>
+            <li><span class="check">◆</span><span class="feat-text"><strong>Comment & DM Monitoring</strong>We track and respond to comments and messages to keep your audience engaged.</span></li>
+          </ul>
+
+          <div class="pkg-section-title">📊 Meta Ads Management</div>
+          <ul class="pkg-features">
+            <li><span class="check">◆</span><span class="feat-text"><strong>2 Ad Campaigns/Month</strong>Traffic or conversion campaigns with targeted audience setup — age, city, health interests, and behaviour targeting.</span></li>
+            <li><span class="check">◆</span><span class="feat-text"><strong>Ad Creatives Included</strong>All ad visuals and copy created within the package.</span></li>
+            <li><span class="check">◆</span><span class="feat-text"><strong>Meta Pixel Setup</strong>Install and configure Meta Pixel for tracking and retargeting (one-time, included).</span></li>
+          </ul>
+
+          <div class="pkg-section-title">📈 Reporting</div>
+          <ul class="pkg-features">
+            <li><span class="check">◆</span><span class="feat-text"><strong>Monthly Performance Report</strong>Reach, impressions, engagement, link clicks, and ad spend breakdown.</span></li>
+            <li><span class="check">◆</span><span class="feat-text"><strong>WhatsApp Support</strong>Dedicated communication channel for quick updates and approvals.</span></li>
+          </ul>
+
+          <a href="mailto:customer@aarkmedex.com" class="pkg-cta">Get Started — ₹30,000/mo</a>
+        </div>
+      </div>
+
+      <!-- ── GROWTH 50K ── -->
+      <div class="pkg-card featured">
+        <div class="pkg-badge">Most Popular</div>
+        <div class="pkg-header">
+          <div class="pkg-name">SMM + Meta Ads — Package 02</div>
+          <div class="pkg-price"><sup>₹</sup>50,000</div>
+          <div class="pkg-price-label">per month · all inclusive</div>
+          <div class="pkg-tagline">Full-scale growth, maximum reach & lead generation</div>
+        </div>
+        <div class="pkg-body">
+
+          <div class="pkg-section-title">📹 Video Content</div>
+          <ul class="pkg-features">
+            <li><span class="check">◆</span><span class="feat-text"><strong>8 Videos/Month</strong>Double the video output — AI, faceless, and UGC-style videos covering all major product categories, testimonials, and educational content.</span></li>
+            <li><span class="check">◆</span><span class="feat-text"><strong>2 Reels/Shorts per week</strong>Short-form viral-style reels optimized for Instagram Reels and Facebook Reels placement.</span></li>
+          </ul>
+
+          <div class="pkg-section-title">🖼️ Graphic Design</div>
+          <ul class="pkg-features">
+            <li><span class="check">◆</span><span class="feat-text"><strong>15 Static Posters/Month</strong>Full category coverage — product posters, offer banners, health days, and brand awareness creatives.</span></li>
+            <li><span class="check">◆</span><span class="feat-text"><strong>8 Story Graphics</strong>Daily story presence with offers, countdowns, product highlights, and interactive polls.</span></li>
+            <li><span class="check">◆</span><span class="feat-text"><strong>4 Carousel Posts</strong>Multi-slide product range showcases and educational carousels for higher saves and shares.</span></li>
+          </ul>
+
+          <div class="pkg-section-title">📣 Social Media Management</div>
+          <ul class="pkg-features">
+            <li><span class="check">◆</span><span class="feat-text"><strong>Instagram + Facebook + WhatsApp Business</strong>Management across three platforms with consistent daily activity.</span></li>
+            <li><span class="check">◆</span><span class="feat-text"><strong>28–30 Posts/Month</strong>Near-daily posting for maximum algorithmic reach and brand recall.</span></li>
+            <li><span class="check">◆</span><span class="feat-text"><strong>Hashtag Strategy</strong>Monthly updated hashtag sets per category for maximum organic discovery.</span></li>
+            <li><span class="check">◆</span><span class="feat-text"><strong>Full Engagement Management</strong>Replies to all comments, DMs, and story interactions handled professionally.</span></li>
+            <li><span class="check">◆</span><span class="feat-text"><strong>Bio & Profile Optimization</strong>SEO-optimized bios, highlights, and profile setup for discoverability.</span></li>
+          </ul>
+
+          <div class="pkg-section-title">📊 Meta Ads Management</div>
+          <ul class="pkg-features">
+            <li><span class="check">◆</span><span class="feat-text"><strong>4–5 Ad Campaigns/Month</strong>Awareness + Traffic + Conversion + Retargeting + WhatsApp Click campaigns — full funnel coverage.</span></li>
+            <li><span class="check">◆</span><span class="feat-text"><strong>A/B Creative Testing</strong>Multiple ad variations tested simultaneously to find the highest-performing creatives.</span></li>
+            <li><span class="check">◆</span><span class="feat-text"><strong>Lookalike Audiences</strong>Build audiences based on your existing customer data to find new high-intent buyers.</span></li>
+            <li><span class="check">◆</span><span class="feat-text"><strong>Retargeting Campaigns</strong>Re-engage website visitors, cart abandoners, and video viewers with tailored ads.</span></li>
+            <li><span class="check">◆</span><span class="feat-text"><strong>International Targeting</strong>Ad sets targeting UAE, UK, USA, and Southeast Asia for global order generation.</span></li>
+          </ul>
+
+          <div class="pkg-section-title">📈 Reporting & Strategy</div>
+          <ul class="pkg-features">
+            <li><span class="check">◆</span><span class="feat-text"><strong>Weekly Performance Report</strong>Every Friday — ad performance, content engagement, follower growth, and ROAS update.</span></li>
+            <li><span class="check">◆</span><span class="feat-text"><strong>Monthly Strategy Call</strong>30-minute video call to review month's results and plan the next month's direction.</span></li>
+            <li><span class="check">◆</span><span class="feat-text"><strong>Dedicated Account Manager</strong>One point of contact for all approvals, updates, and quick changes.</span></li>
+          </ul>
+
+          <a href="mailto:customer@aarkmedex.com" class="pkg-cta">Get Started — ₹50,000/mo</a>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- comparison table -->
+    <div style="margin-top: 64px;">
+      <span class="section-label">Quick Comparison</span>
+      <h3 style="font-family:'Cormorant Garamond',serif; font-size:1.8rem; font-weight:300; color:var(--white); margin-bottom:4px;">Side-by-Side <em style="color:var(--gold);font-style:italic;">Overview</em></h3>
+    </div>
+
+    <table class="compare-table">
+      <thead>
+        <tr>
+          <th>Feature</th>
+          <th>₹30,000 Starter</th>
+          <th>₹50,000 Growth</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Videos per Month</td><td>4 Videos</td><td>8 Videos + Reels</td></tr>
+        <tr><td>Static Posters</td><td>8 Posters</td><td>15 Posters</td></tr>
+        <tr><td>Story Graphics</td><td>4 Stories</td><td>8 Stories</td></tr>
+        <tr><td>Carousel Posts</td><td class="cross">—</td><td>4 Carousels</td></tr>
+        <tr><td>Total Posts/Month</td><td>16 Posts</td><td>28–30 Posts</td></tr>
+        <tr><td>Platforms Managed</td><td>Instagram + Facebook</td><td>Instagram + Facebook + WhatsApp</td></tr>
+        <tr><td>Meta Ad Campaigns</td><td>2 Campaigns</td><td>4–5 Campaigns</td></tr>
+        <tr><td>A/B Ad Testing</td><td class="cross">—</td><td><span class="tick">✦</span> Included</td></tr>
+        <tr><td>Retargeting Ads</td><td class="cross">—</td><td><span class="tick">✦</span> Included</td></tr>
+        <tr><td>International Targeting</td><td class="cross">—</td><td><span class="tick">✦</span> UAE, UK, USA</td></tr>
+        <tr><td>Lookalike Audiences</td><td class="cross">—</td><td><span class="tick">✦</span> Included</td></tr>
+        <tr><td>Meta Pixel Setup</td><td><span class="tick-t">✦</span> One-time</td><td><span class="tick">✦</span> + Advanced Events</td></tr>
+        <tr><td>Reporting</td><td>Monthly Report</td><td>Weekly + Monthly</td></tr>
+        <tr><td>Strategy Call</td><td class="cross">—</td><td><span class="tick">✦</span> Monthly Call</td></tr>
+        <tr><td>Dedicated Account Manager</td><td class="cross">—</td><td><span class="tick">✦</span> Included</td></tr>
+        <tr><td>WhatsApp Click Ads</td><td class="cross">—</td><td><span class="tick">✦</span> Included</td></tr>
+      </tbody>
+    </table>
+
+    <p style="margin-top:24px; font-size:0.82rem; color:var(--muted); font-family:'Space Mono',monospace;">
+      * Ad spend budget is separate and paid directly to Meta. Package covers management, strategy, and all creative production only.
+    </p>
+
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════ FOOTER ══ -->
+<footer>
+  <div class="f-logo">A.A.R.K <em>Medex</em></div>
+  <div class="f-tag">Digital Marketing Proposal · 2025</div>
+
+  <div class="f-contacts">
+    <a href="https://aarkmedex.com" target="_blank">🌐 aarkmedex.com</a>
+    <a href="mailto:customer@aarkmedex.com">✉ customer@aarkmedex.com</a>
+    <a href="tel:919822592562">📞 +91 9822592562</a>
+  </div>
+
+  <div style="width:60px; height:1px; background:linear-gradient(90deg,transparent,var(--gold),transparent); margin:0 auto 28px;"></div>
+
+  <div class="f-copy">Prepared with care · All rights reserved · A.A.R.K Medex © 2025</div>
+</footer>
+
+</body>
+</html>
